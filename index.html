@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>eBook A Garota no Ponto de Ônibus</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- Cabeçalho com logomarca -->
+  <header class="bg-indigo-600 text-white p-6 text-center" aria-label="Cabeçalho do site A Garota no Ponto de Ônibus">
+    <div class="flex items-center justify-center gap-4">
+      <img src="A_book_cover_photograph_for_a_novel_titled_&quot;A_Garo.png" alt="Logo do site A Garota no Ponto de Ônibus" class="rounded-full shadow-md w-12 h-12" />
+      <div>
+        <h1 class="text-3xl font-bold">📘 A Garota no Ponto de Ônibus</h1>
+        <p class="text-lg mt-1">Uma história de encontros inesperados e transformações profundas</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contador de Promoção -->
+  <section class="bg-red-100 py-6">
+    <div class="text-center">
+      <h2 class="text-2xl font-bold text-red-600 mb-2">🔥 Promoção por Tempo Limitado!</h2>
+      <p class="text-lg mb-4">Garanta seu eBook com desconto antes que o tempo acabe:</p>
+      <div id="contador" class="text-3xl font-bold text-red-700"></div>
+    </div>
+  </section>
+
+  <!-- Hero Section -->
+  <section class="flex flex-col md:flex-row items-center justify-center p-10 gap-8">
+    <img src="A_book_cover_photograph_for_a_novel_titled_&quot;A_Garo.png" alt="Capa do eBook A Garota no Ponto de Ônibus" class="rounded-xl shadow-xl w-[300px]" />
+    <div>
+      <h2 class="text-2xl font-bold mb-4">📖 O que você vai encontrar?</h2>
+      <ul class="list-disc list-inside text-lg space-y-2">
+        <li>Uma narrativa envolvente sobre escolhas e destino</li>
+        <li>Personagens marcantes e reais</li>
+        <li>Reflexões sobre a vida urbana e solidão</li>
+        <li>Um final surpreendente e inesquecível</li>
+      </ul>
+      <a href="https://seulinkdecompra.com" class="inline-block mt-6 bg-indigo-600 hover:bg-indigo-700 text-white text-lg px-6 py-3 rounded-full shadow-md transition">
+        Comprar Agora por R$29,90
+      </a>
+    </div>
+  </section>
+
+  <!-- Amostra do Livro -->
+  <section class="bg-white py-12 px-6 max-w-4xl mx-auto">
+    <h3 class="text-2xl font-bold mb-4 text-center">📄 Leia um trecho da história</h3>
+    <div class="bg-gray-100 p-6 rounded-lg shadow-md text-justify text-lg leading-relaxed">
+      <p>
+        O céu estava cinza naquela manhã de terça-feira. Clara esperava no ponto de ônibus, como fazia todos os dias, mas algo parecia diferente. Havia uma tensão no ar, uma expectativa que ela não conseguia explicar. Enquanto segurava seu guarda-chuva azul-marinho, lembrava-se das palavras de sua avó: “Às vezes, é no ponto de espera que a vida muda de direção.”
+      </p>
+      <p class="mt-4">
+        Um homem com uma pasta surrada se aproximou e, por um momento, seus olhares se cruzaram. Não disseram nada. Não precisavam. O silêncio entre eles era mais eloquente que qualquer saudação. Mal sabia Clara que aquele estranho traria reviravoltas que ela jamais imaginaria.
+      </p>
+      <p class="mt-4 italic text-indigo-600">
+        (Quer saber o que acontece depois? Compre agora e descubra!)
+      </p>
+    </div>
+  </section>
+
+  <!-- Depoimentos -->
+  <section class="bg-white py-10">
+    <h3 class="text-center text-2xl font-bold mb-6">💬 O que estão dizendo</h3>
+    <div class="flex flex-col md:flex-row justify-center gap-6 max-w-4xl mx-auto px-4">
+      <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+        <p>"Uma leitura emocionante do início ao fim. Chorei no ponto final."</p>
+        <p class="mt-2 font-semibold text-indigo-600">— Elisa T.</p>
+      </div>
+      <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+        <p>"A narrativa é tão real que parecia que eu estava ali com ela."</p>
+        <p class="mt-2 font-semibold text-indigo-600">— Marcos D.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Botão de WhatsApp -->
+  <div class="fixed bottom-6 right-6 z-50">
+    <a href="https://wa.me/5588996845625?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+o+eBook+A+Garota+no+Ponto+de+%C3%94nibus!" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-full shadow-lg text-lg">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="w-6 h-6" /> Fale no WhatsApp
+    </a>
+  </div>
+
+  <!-- Rodapé -->
+  <footer class="bg-indigo-600 text-white text-center p-6 mt-10">
+    <p>&copy; 2025 A Garota no Ponto de Ônibus. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Script do contador -->
+  <script>
+    const dataFinal = new Date();
+    dataFinal.setDate(dataFinal.getDate() + 2); // promoção por 2 dias
+
+    function atualizaContador() {
+      const agora = new Date();
+      const diferenca = dataFinal - agora;
+
+      if (diferenca <= 0) {
+        document.getElementById('contador').innerHTML = 'Promoção encerrada!';
+        return;
+      }
+
+      const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+
+      document.getElementById('contador').innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+    }
+
+    setInterval(atualizaContador, 1000);
+    atualizaContador();
+  </script>
+</body>
+</html>
